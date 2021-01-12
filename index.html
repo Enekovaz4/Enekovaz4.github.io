@@ -133,13 +133,22 @@ data-static="lg">
 
 </div>
 <ul class="sidebar-menu">
-  <li><a><span class="mif-home icon"></span>Conocimientos</a></li>
+  <li><a><span class="mif-home icon"></span><strong>Conocimientos</strong></a></li>
   <!-- 
   <li><a><span class="mif-books icon"></span>Guide</a></li>
   <li><a><span class="mif-files-empty icon"></span>Examples</a></li>
-  <li class="divider"></li>
-  <li><a><span class="mif-images icon"></span>Icons</a></li>
   -->
+  <li class="divider"></li>
+  <li><a><span class="mif-school icon"></span><strong>Estudios</strong></a></li>
+  <li><a>GS Aplicaciones Web</a></li>
+  <li><a>GS Aplicaciones Multiplataforma</a></li>
+<li class="divider"></li>
+<li><a><span class="mif-organization icon"></span><strong>Experiencia</strong></a></li>
+  <li> <a href="https://smowl.net/es/" target="_blank">Smiley Owl Tech</a></li>
+  <li> <a href="https://echemar.com" target="_blank">Transportes Echemar</a></li>
+<li class="divider"></li>
+<li><a><span class="mif-favorite icon"></span><strong>Carta de Recomendaciones</strong></a></li>
+   <li><a href="img/recomendacion.pdf" target="_blank">Recomendación Smowl  <span class="mif-link"></a></li>
 </ul>
 </aside>
 
@@ -184,17 +193,20 @@ data-static="lg">
               <li data-icon="<img src='img/logos/bootstrap.png'>" data-caption="<p class='custom-caption'>Bootstrap</p>">
                 <div data-role="progress" data-value="75" data-small="true" v-if="enableProgress"></div>
               </li>
-              <li class="selected" data-icon="<img src='img/logos/laravel.png'>" data-caption="<p class='custom-caption'>Laravel</p>">
+              <li class="selected" data-icon="<img src='img/logos/laravel.png'>"  data-role="hint"
+    data-hint-text="Framework utilizado para la creación del proyecto de fin de curso 'PanPas'" data-caption="<p class='custom-caption'>Laravel</p>">
                 <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
               </li>
             </ul>
           </li>
           <li data-caption="Desarrollo Aplicaciones Móviles">
             <ul>
-              <li data-icon="<img src='img/logos/ionic.png'>" data-caption="<p class='custom-caption'>Ionic</p>">
+              <li class="selected" data-icon="<img src='img/logos/ionic.png'>" data-caption="<p class='custom-caption'>Ionic</p>" data-role="hint"
+    data-hint-text="Primer Framework utilizado para hacer aplicaciones simples.">
                 <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
               </li>
-              <li data-icon="<img src='img/logos/flutter.png'>" data-caption="<p class='custom-caption'>Flutter</p>">
+              <li class="selected" data-icon="<img src='img/logos/flutter.png'>" data-caption="<p class='custom-caption'>Flutter</p>" data-role="hint"
+    data-hint-text="Framework Utilizado en proyectos de clase y proyectos personales">
                 <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
               </li>
               <li data-icon="<img src='img/logos/androidStudio.png'>" data-caption="<p class='custom-caption'>Android Studio</p>">
@@ -246,13 +258,16 @@ data-static="lg">
           </li>
           <li data-caption="Otros">
             <ul>
-              <li data-icon="<img src='img/logos/electron.png'>" data-caption="<p class='custom-caption'>Electron</p>">
+              <li class="selected" data-icon="<img src='img/logos/electron.png'>" data-caption="<p class='custom-caption'>Electron</p>" data-role="hint"
+    data-hint-text="Framework utilizado en el proyecto de fin de curso en el grado superior de desarrollo de aplicaciones multiplataforma en la que se enlazaban los dispositivos móviles y sistemas informáticos para crear una aplicación que fuera útil a la hora de ayudar a los servicios de emergencia en un rescate por todo el mundo.">
                 <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
               </li>
-              <li data-icon="<img src='img/logos/python.png'>" data-caption="<p class='custom-caption'>Python</p>">
+              <li class="selected" data-icon="<img src='img/logos/python.png'>" data-caption="<p class='custom-caption'>Python</p>" data-role="hint"
+    data-hint-text="Utilizado para aprender procesamiento de imagen y detectar objetos en una foto.">
                 <div data-role="progress" data-value="70" data-small="true" v-if="enableProgress"></div>
               </li>
-              <li data-icon="<img src='img/logos/unity3D.png'>" data-caption="<p class='custom-caption'>Unity3D</p>">
+              <li class="selected" data-icon="<img src='img/logos/unity3D.png'>" data-caption="<p class='custom-caption'>Unity3D</p>" data-role="hint"
+    data-hint-text="La aplicacion con la que más tiempo paso programando. Con 16 años que empecé a crear videojuegos como hobby. <br>Me presenté a la Global Game Jam 2019 con 'The Lumberjack', un evento donde dan 48h para crear un juego sobre un tema específico.">
                 <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
               </li>
             </ul>
@@ -286,18 +301,14 @@ data-static="lg">
           </li>
           <li data-caption="Aplicaciones Móviles">
             <ul>
-              <a href="http://panpas.herokuapp.com" target="_blank">
-                <li data-icon="<img src='img/logos/ugaquiz.png'>" data-caption="<p class='custom-caption'>Ugaquiz3000</p>"></li>
+              <a >
+                <li class="selected" data-icon="<img src='img/logos/ugaquiz.png'>" data-caption="<p class='custom-caption'>Ugaquiz3000</p>" data-role="hint"
+    data-hint-text="App desarrollada para ayudar a un amigo.<br> La aplicación simplemente es un juego de 1 Pregunta y 4 respuestas en la que se contabilizan los aciertos y errores."></li>
               </a>
             </ul>
           </li>
         </ul>
       </li>
-      <li data-caption="Planes Futuros">
-        <ul>
-          <li data-icon="<span class='mif-folder fg-orange'>" data-caption="<p class='custom-caption'></p>"></li>
-          </ul>
-        </li>
       </ul>
       <button id="show-modal" @click="showModal = true">Show Modal</button>
   <!-- use the modal component, pass in the prop -->
@@ -306,7 +317,6 @@ data-static="lg">
       you can use custom content here to overwrite
       default content
     -->
-    <h3 slot="header">custom header</h3>
     </div> <!-- // shifted  -->
 
 
