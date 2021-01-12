@@ -4,26 +4,148 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <?php
-  include("js/basicJs.php");
-  include("css/basicCss.php");
-  ?>
+  
+  
+<!--JQUERY -->
+<script src="./node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+<!-- //JQUERY -->
+
+<!-- BOOTSTRAP 4 -->
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+
+<!-- //BOOTSTRAP 4 -->
+
+<!-- METROUI -->
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<!-- //METROUI -->
+
+<!-- VUEJS -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- //VUEJS -->
+
+
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- //BOOTSTRAP 4 -->
+
+
+<!-- METROUI -->
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+<!-- //METROUI -->
+
+
+
 
   <style media="screen">
   .custom-caption
   { font-size: 20px; font-weight: normal;}
   .caption
   { font-weight: bold;}
+  .modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
   </style>
 </head>
 <body data-role="touch"  data-on-swipe-right="abrir">
-  <?php
-  include("templates/sidenavSide.php");
-  ?>
+  <aside class="sidebar pos-fixed z-2"
+data-role="sidebar"
+data-toggle="#sidebar-toggle-4"
+id="sb4"
+data-shift=".shifted-content-2"
+data-static-shift=".shifted-content-2"
+data-static="lg">
+<div class="sidebar-header" data-image="img/background/sidebar-header.jpg">
+  <div class="avatar">
+    <img src="img/avatar.png">
+  </div>
+  <span class="title fg-white text-bold">Eneko Vázquez López, 22</span>
+
+  <span class="subtitle fg-white mt-2">
+    <a href="mailto:eneko.vazquez97@gmail.com" class="text-bold" style="color: white;">
+      <span class="mif-envelop ani-shake mif-3x mr-1"></span>
+      Eneko.vazquez97@gmail.com
+    </a>
+  </span>
+
+</div>
+<ul class="sidebar-menu">
+  <li><a><span class="mif-home icon"></span>Inicio</a></li>
+  <li><a><span class="mif-books icon"></span>Guide</a></li>
+  <li><a><span class="mif-files-empty icon"></span>Examples</a></li>
+  <li class="divider"></li>
+  <li><a><span class="mif-images icon"></span>Icons</a></li>
+</ul>
+</aside>
+
   <script type="text/javascript">
   function abrir(){
     console.log(  $("#sb4"));
   }
+
   </script>
 
   <div class="shifted-content-2 h-100 p-ab pos-absolute"  id="app">
