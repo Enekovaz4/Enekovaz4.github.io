@@ -9,7 +9,7 @@ data-static="lg">
   <div class="avatar">
     <img src="img/avatar.png">
   </div>
-  <span class="title fg-white text-bold">Eneko Vázquez López, 22</span>
+  <span class="title fg-white text-bold">Eneko Vázquez López, 26</span>
 
   <span class="subtitle fg-white mt-2">
     <a href="mailto:eneko.vazquez97@gmail.com" class="text-bold" style="color: white;">
