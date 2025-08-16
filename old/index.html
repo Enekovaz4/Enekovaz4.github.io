@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="mainImage.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<head>
+  <meta charset="utf-8">
+  <title>Experiencia</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<!--JQUERY -->
+<script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+<!-- //JQUERY -->
+
+<!-- BOOTSTRAP 4 -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+
+<!-- //BOOTSTRAP 4 -->
+
+<!-- METROUI -->
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<!-- //METROUI -->
+
+<!-- VUEJS -->
+<script src="js/vue.js"></script>
+<!-- //VUEJS -->
+
+
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- //BOOTSTRAP 4 -->
+
+
+<!-- METROUI -->
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+<!-- //METROUI -->
+
+
+
+
+  <style media="screen">
+  .custom-caption
+  { font-size: 20px; font-weight: normal;}
+  .caption
+  { font-weight: bold;}
+  .modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  </style>
+</head>
+<body data-role="touch"  data-on-swipe-right="abrir">
+  <aside class="sidebar pos-fixed z-2"
+data-role="sidebar"
+data-toggle="#sidebar-toggle-4"
+id="sb4"
+data-shift=".shifted-content-2"
+data-static-shift=".shifted-content-2"
+data-static="lg">
+<div class="sidebar-header" data-image="img/background/sidebar-header.jpg">
+  <div class="avatar">
+    <img src="img/avatar.png">
+  </div>
+  <span class="title fg-white text-bold">Eneko Vázquez López, 26</span>
+
+  <span class="subtitle fg-white mt-2">
+    <a href="mailto:eneko.vazquez97@gmail.com" class="text-bold" style="color: white;">
+      <span class="mif-envelop ani-shake mif-3x mr-1"></span>
+      Eneko.vazquez97@gmail.com
+    </a>
+  </span>
+
+</div>
+<ul class="sidebar-menu">
+  <li><a><span class="mif-home icon"></span><strong>Conocimientos</strong></a></li>
+  <!-- 
+  <li><a><span class="mif-books icon"></span>Guide</a></li>
+  <li><a><span class="mif-files-empty icon"></span>Examples</a></li>
+  -->
+  <li class="divider"></li>
+  <li><a style="cursor: default;"><span class="mif-school icon"></span><strong>Estudios</strong></a></li>
+  <li><a style="cursor: default;"><strong>UNIV. Ingeniería Informática</strong></a></li>
+  <li><a style="cursor: default;">GS Aplicaciones Multiplataforma</a></li>
+  <li><a style="cursor: default;">GS Aplicaciones Web</a></li>
+  
+ 
+<li class="divider"></li>
+<li><a style="cursor: default;"><span class="mif-organization icon"></span><strong>Experiencia</strong></a></li>
+  <li> <a href="https://isidromusikaeskola.com" target="_blank">Isidro Musika Eskola</a></li>
+  <li> <a href="https://smowl.net/es/" target="_blank">Smiley Owl Tech</a></li>
+  <li> <a href="https://echemar.com" target="_blank">Transportes Echemar</a></li>
+<li class="divider"></li>
+<!--<li><a style="cursor: default;"><span class="mif-favorite icon"></span><strong>Carta de Recomendaciones</strong></a></li>
+   <li><a href="img/recomendacion.pdf" target="_blank">Recomendación Smowl  <span class="mif-link"></a></li>-->
+</ul>
+</aside>
+
+  <script type="text/javascript">
+  function abrir(){
+    console.log(  $("#sb4"));
+  }
+
+  </script>
+
+  <div class="shifted-content-2 h-100 p-ab pos-absolute"  id="app">
+    <div class="appbar pos-absolute bg-red z-1" data-role="appbar">
+      <button class="app-bar-item c-pointer" id="sidebar-toggle-4">
+        <span class="mif-menu fg-white"></span>
+      </button>
+    </div>
+    <label>Barras de Conocimiento <input type="checkbox" name="inp_barrasConocimiento" v-model="enableProgress"> </label>
+    <hr>
+    <ul data-role="listview" data-view="icons-medium" data-selectable="false">
+      <li data-caption="Tecnologías utilizadas">
+        <ul class="pl-10">
+          <li data-caption="Desarrollo Aplicaciones Web">
+            <ul>
+              <li data-icon="<img src='img/logos/php.png'>" data-caption="<p class='custom-caption'>PHP</p>">
+                <div data-role="progress" data-value="90" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/html.png'>" data-caption="<p class='custom-caption'>HTML</p>">
+                <div data-role="progress" data-value="95" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/JS.png'>" data-caption="<p class='custom-caption'>JS</p>">
+                <div data-role="progress" data-value="90" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/CSS.png'>" data-caption="<p class='custom-caption'>CSS</p>">
+                <div data-role="progress" data-value="80" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/nodeJS.png'>" data-caption="<p class='custom-caption'>NodeJS</p>">
+                <div data-role="progress" data-value="75" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/jQuery.png'>" data-caption="<p class='custom-caption'>Jquery</p>">
+                <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/bootstrap.png'>" data-caption="<p class='custom-caption'>Bootstrap</p>">
+                <div data-role="progress" data-value="75" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li class="selected" data-icon="<img src='img/logos/laravel.png'>"  data-role="hint"
+    data-hint-text="Framework utilizado para la creación del proyecto de fin de curso 'PanPas'" data-caption="<p class='custom-caption'>Laravel</p>">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/metroui.png'>" data-caption="<p class='custom-caption'>MetroUI</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+               <li data-icon="<img src='img/logos/vue.png'>" data-caption="<p class='custom-caption'>VueJS</p>">
+                <div data-role="progress" data-value="50" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/django.png'>" data-caption="<p class='custom-caption'>DJango</p>">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Desarrollo Aplicaciones Móviles">
+            <ul>
+              <li class="selected" data-icon="<img src='img/logos/ionic.png'>" data-caption="<p class='custom-caption'>Ionic</p>" data-role="hint"
+    data-hint-text="Primer Framework utilizado para hacer aplicaciones simples.">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li class="selected" data-icon="<img src='img/logos/flutter.png'>" data-caption="<p class='custom-caption'>Flutter</p>" data-role="hint"
+    data-hint-text="Framework Utilizado en proyectos de clase y proyectos personales">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/androidStudio.png'>" data-caption="<p class='custom-caption'>Android Studio</p>">
+                <div data-role="progress" data-value="50" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/reactNative.png'>" data-caption="<p class='custom-caption'>React Native</p>">
+                <div data-role="progress" data-value="35" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Bases de Datos">
+            <ul>
+              <li data-icon="<img src='img/logos/MySql.png'>" data-caption="<p class='custom-caption'>SQL</p>">
+                <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/mongodb.png'>" data-caption="<p class='custom-caption'>MongoDB</p>">
+                <div data-role="progress" data-value="70" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/sqlite.png'>" data-caption="<p class='custom-caption'>SQLite</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/postgress.png'>" data-caption="<p class='custom-caption'>PostgreSQL</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/oracle.png'>" data-caption="<p class='custom-caption'>Oracle</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Gestor de Paquetes">
+            <ul>
+              <li data-icon="<img src='img/logos/apt.png'>" data-caption="<p class='custom-caption'>Apt</p>">
+                <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/placeholder.png'>" data-caption="<p class='custom-caption'>Yum</p>">
+                <div data-role="progress" data-value="70" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/npm.png'>" data-caption="<p class='custom-caption'>Npm</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Control de Versiones">
+            <ul>
+              <li data-icon="<img src='img/logos/git.png'>" data-caption="<p class='custom-caption'>Git</p>">
+                <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+           <li data-caption="Servidores">
+            <ul>
+              <li data-icon="<img src='img/logos/wxampp.jpg'>" data-caption="<p class='custom-caption'>Xampp / Wampp</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/apache.png'>" data-caption="<p class='custom-caption'>Apache</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/nginx.png'>" data-caption="<p class='custom-caption'>Nginx</p>">
+                <div data-role="progress" data-value="35" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li data-icon="<img src='img/logos/winserver.png'>" data-caption="<p class='custom-caption'>Windows Server</p>">
+                <div data-role="progress" data-value="5" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Diseño / Modelado">
+            <ul>
+              <li data-icon="<img src='img/logos/autocad.png'>" data-caption="<p class='custom-caption'>Autocad</p>">
+                <div data-role="progress" data-value="50" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/photoshop.jpg'>" data-caption="<p class='custom-caption'>Photoshop</p>">
+                <div data-role="progress" data-value="75" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/blender.png'>" data-caption="<p class='custom-caption'>Blender</p>">
+                <div data-role="progress" data-value="20" data-small="true" v-if="enableProgress"></div>
+              </li>
+            </ul>
+          </li>
+          <li data-caption="Otros">
+            <ul>
+              <li class="selected" data-icon="<img src='img/logos/electron.png'>" data-caption="<p class='custom-caption'>Electron</p>" data-role="hint"
+    data-hint-text="Framework utilizado en el proyecto de fin de curso en el grado superior de desarrollo de aplicaciones multiplataforma en la que se enlazaban los dispositivos móviles y sistemas informáticos para crear una aplicación que fuera útil a la hora de ayudar a los servicios de emergencia en un rescate por todo el mundo.">
+                <div data-role="progress" data-value="85" data-small="true" v-if="enableProgress"></div>
+              </li>
+                    <li data-icon="<img src='img/logos/java.png'>" data-caption="<p class='custom-caption'>Java</p>">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+              <li class="selected" data-icon="<img src='img/logos/python.png'>" data-caption="<p class='custom-caption'>Python</p>" data-role="hint"
+    data-hint-text="Utilizado para aprender procesamiento de imagen y detectar objetos en una foto.">
+                <div data-role="progress" data-value="70" data-small="true" v-if="enableProgress"></div>
+              </li>
+              <li class="selected" data-icon="<img src='img/logos/unity3D.png'>" data-caption="<p class='custom-caption'>Unity3D</p>" data-role="hint"
+    data-hint-text="La aplicacion con la que más tiempo paso programando. Con 16 años que empecé a crear videojuegos como hobby. <br>Me presenté a la Global Game Jam 2019 con 'The Lumberjack', un evento donde dan 48h para crear un juego sobre un tema específico.">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+              </li>
+               <li data-icon="<img src='img/logos/xml.png'>" data-caption="<p class='custom-caption'>XML</p>">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/csharp.png'>" data-caption="<p class='custom-caption'>C#</p>">
+                <div data-role="progress" data-value="40" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/angular.png'>" data-caption="<p class='custom-caption'>Angular</p>">
+                <div data-role="progress" data-value="35" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/vbNet.png'>" data-caption="<p class='custom-caption'>VB.NET</p>">
+                <div data-role="progress" data-value="60" data-small="true" v-if="enableProgress"></div>
+                <li data-icon="<img src='img/logos/ue4.png'>" data-caption="<p class='custom-caption'>Unreal Engine 4</p>">
+                <div data-role="progress" data-value="10" data-small="true" v-if="enableProgress"></div>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li data-caption="Aprendiendo">
+        <ul>
+         
+          
+        </ul>
+      </li>
+      <li data-caption="Proyectos Desarrollados">
+        <ul class="pl-10">
+          <li data-caption="Páginas Web">
+            <ul>
+              <a href="http://panpas.herokuapp.com" target="_blank">
+                <li data-icon="<img src='img/logos/panpas.png'>" data-caption="<p class='custom-caption'>Panpas</p>"></li>
+              </a>
+              <a href="https://www.isidromusikaeskola.com" target="_blank">
+                <li data-icon="<img src='img/logos/isidro.png'>" data-caption="<p class='custom-caption'>Isidro Musika Eskola</p>"></li>
+              </a>
+              <a href="https://www.echemar.com" target="_blank">
+                <li data-icon="<img src='img/logos/echemar.png'>" data-caption="<p class='custom-caption'>Transportes Echemar</p>"></li>
+              </a>
+            </ul>
+          </li>
+          <li data-caption="Aplicaciones Móviles">
+            <ul>
+              <a >
+                <li class="selected" data-icon="<img src='img/logos/ugaquiz.png'>" data-caption="<p class='custom-caption'>Ugaquiz3000</p>" data-role="hint"
+    data-hint-text="App desarrollada para ayudar a un amigo.<br> La aplicación simplemente es un juego de 1 Pregunta y 4 respuestas en la que se contabilizan los aciertos y errores."></li>
+              </a>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      </ul>
+      <button id="show-modal" @click="showModal = true">Show Modal</button>
+  <!-- use the modal component, pass in the prop -->
+  <modal v-if="showModal" @close="showModal = false">
+    <!--
+      you can use custom content here to overwrite
+      default content
+    -->
+    </div> <!-- // shifted  -->
+
+
+
+
+
+
+
+
+    <script>
+
+
+      // register modal component
+      Vue.component('modal', {
+        template: '#modal-template'
+      })
+
+    const app = new Vue(
+      {
+        el: "#app",
+        data:{
+          p : 50,
+          enableProgress: true,
+          showModal: false,
+        },
+        methods: {
+          updateBarras: function () {
+            console.log("UpDATING");
+          }
+        }
+      }
+    );
+    </script>
+
+  </body>
+
+  </html>
